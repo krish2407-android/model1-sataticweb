@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Silver Fashion - Elite Clothing Store</title>
+    <link rel="stylesheet" href="index.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+     integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+
+    <div id="header"></div>
+
+    <div class="slider-box">
+        <div class="slider" id="slider">
+            <div class="slide">
+                <img src="./img/slide2.jpg" alt="">
+                <div class="text">
+                    <span>New Arrivals</span>
+                    <h1>Summer Collection 2026</h1>
+                    <p>Upgrade your wardrobe with our breathable, premium cotton shirts and airy casual outfits.</p>
+                    <a href="productmen.html" class="btn">Shop Collection</a>
+                </div>
+            </div>
+            <div class="slide">
+                <img src="./img/slide3.jpg" alt="">
+                <div class="text">
+                    <span>Trending Now</span>
+                    <h1>Urban Streetwear</h1>
+                    <p>Discover high-quality minimal hoodies, oversized tees, and heavy denim jackets.</p>
+                    <a href="productmen.html" class="btn">Explore Now</a>
+                </div>
+            </div>
+            <div class="slide">
+                <img src="./img/slide2.avif" alt="">
+                <div class="text">
+                    <span>Exclusive Deals</span>
+                    <h1>Luxury Fits & Styles</h1>
+                    <p>Get up to 40% off on premium luxury wear and tailored structural clothes this week.</p>
+                    <a href="productwomen.html" class="btn">Grab Offer</a>
+                </div>
+            </div>
+        </div>
+        <button class="prev-btn" onclick="changeSlide(-1)">&#10094;</button>
+        <button class="next-btn" onclick="changeSlide(1)">&#10095;</button>
+    </div>
+
+    <section class="section">
+        <div class="title">
+            <h2>Trending Products</h2>
+            <p>Handpicked premium clothing items just for you</p>
+        </div>
+        <div class="grid">
+            <div class="card">
+                <div class="img-box">
+                    <img src="./img/men.jpg" alt="">
+                </div>
+                <div class="details">
+                    <a href="productmen.html"><button class="btn">Men</button></a>
+                </div>
+            </div>
+            <div class="card">
+                <div class="img-box">
+                    <img src="./img/women.jpg" alt="">
+                </div>
+                <div class="details">
+                    <a href="productwomen.html"><button class="btn">Women</button></a>
+                </div>
+            </div>
+            <div class="card">
+                <div class="img-box">
+                    <img src="./img/child.jpg" alt="">
+                </div>
+                <div class="details">
+                    <a href="productbabyg.html"><button class="btn">Baby Girl</button></a>
+                </div>
+            </div>
+            <div class="card">
+                <div class="img-box">
+                    <img src="./img/child boys.jpg" alt="">
+                </div>
+                <div class="details">
+                    <a href="productbabyb.html"><button class="btn">Baby Boy</button></a>
+                </div>
+                
+            </div>
+            <a href="#" class="font"><i class="fa-solid fa-angle-up"></i></a>
+        </div>
+    </section>
+    
+
+    <div id="footer"></div>
+
+    <script>
+        var slider = document.getElementById('slider');
+        var currentIndex = 0;
+        var totalSlides = document.querySelectorAll('.slide').length;
+        var slideInterval;
+
+        function updateSlider() {
+            slider.style.transform = 'translateX(-' + (currentIndex * 100) + '%)';
+        }
+
+        function changeSlide(direction) {
+            currentIndex = currentIndex + direction;
+            if (currentIndex >= totalSlides) {
+                currentIndex = 0;
+            } else if (currentIndex < 0) {
+                currentIndex = totalSlides - 1;
+            }
+            updateSlider();
+            resetTimer();
+        }
+
+        function startTimer() {
+            slideInterval = setInterval(function() {
+                changeSlide(1);
+            }, 5000);
+        }
+
+        function resetTimer() {
+            clearInterval(slideInterval);
+            startTimer();
+        }
+
+        startTimer();
+
+        $(document).ready(function() {
+            $("#header").load("header.html");
+            $("#footer").load("footer.html");
+        });
+    </script>
+
+</body>
+</html>

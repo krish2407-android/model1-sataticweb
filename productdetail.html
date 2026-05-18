@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Detail - Silver Fashion</title>
+    <link rel="stylesheet" href="productdetail.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+
+    <div id="header"></div>
+
+    <section class="page" id="main" hidden>
+        <a href="#" class="back" id="backLink">← Back</a>
+        <div class="box">
+            <div class="pic">
+                <img id="img" src="" alt="">
+            </div>
+            <div class="info">
+                <span class="tag" id="cat"></span>
+                <h1 id="name"></h1>
+                <p class="desc" id="desc"></p>
+                <p class="price" id="price"></p>
+
+                <div class="sizes">
+                    <p class="label">Select Size</p>
+                    <div class="row" id="sizeRow">
+                        <button type="button" class="size" data-size="XS">XS</button>
+                        <button type="button" class="size" data-size="S">S</button>
+                        <button type="button" class="size" data-size="M">M</button>
+                        <button type="button" class="size" data-size="L">L</button>
+                        <button type="button" class="size" data-size="XL">XL</button>
+                        <button type="button" class="size" data-size="XXL">XXL</button>
+                    </div>
+                </div>
+
+                <div class="btns">
+                    <button type="button" class="btn dark" id="cartBtn">Add To Cart</button>
+                    <button type="button" class="btn light" id="buyBtn">Buy Now</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="empty" id="notFound" hidden>
+        <h1>Product not found</h1>
+        <p>Sorry, we could not find this product.</p>
+        <a href="index.html" class="btn dark">Go to Home</a>
+    </section>
+
+    <div id="footer"></div>
+
+    <script>
+        var CAT = {
+            men: { category: 'Men', listPage: 'productmen.html' },
+            women: { category: 'Women', listPage: 'productwomen.html' },
+            babyg: { category: 'Baby Girl', listPage: 'productbabyg.html' },
+            babyb: { category: 'Baby Boy', listPage: 'productbabyb.html' }
+        };
+        var DATA = {
+            men: [
+                ['white-t-shirt', 'White T-Shirt', 'Stylish cotton T-shirt for men.', 999, 'men1.jpg'],
+                ['blue-shirt', 'Blue Shirt', 'Stylish shirts', 1499, 'm2.jpg'],
+                ['printing-shirt', 'Printing Shirt', 'printing shirt for men', 1999, 'm3.jpg'],
+                ['lining-shirt', 'lining shirt', 'Premium stylish shirt', 3499, 'm6.jpg'],
+                ['kurta', 'Kurta', 'Classic casual kurta', 799, 'm5.jpg'],
+                ['shirt', 'shirt', 'Us polo shirt', 2999, 'm4.jpg']
+            ],
+            women: [
+                ['silk-saree', 'Silk Saree', 'Beautiful sari for women.', 2499, 'w1.jpg'],
+                ['shirt', 'Shirt', 'Light and trendy summer shirt.', 899, 'w2.jpg'],
+                ['casual-kurti', 'Casual Kurti', 'Comfortable daily wear kurti.', 1299, 'w3.jpg'],
+                ['blue-jeans', 'Blue jeans', 'Blue jeans for women.', 3199, 'w4.jpg'],
+                ['party-dresses', 'party Dresses', 'party wear for women.', 1799, 'w5.jpg'],
+                ['floral-skirt', 'Floral Skirt', 'Elegant floral print skirt.', 1099, 'w6.jpg']
+            ],
+            babyg: [
+                ['skirt-1', 'Skirt', 'Cute frock for baby girls.', 699, 'g1.jpg'],
+                ['skirt-2', 'Skirt', 'Comfortable skirt.', 1499, 'g2.jpg'],
+                ['pink-fork', 'pink fork', 'pink fork for child.', 1999, 'g3.jpg'],
+                ['pink-skirt', 'pink skirt', 'Pink skirt for women.', 3499, 'g4.jpg'],
+                ['t-shirt', 'T-Shirt', 'T-shirt for child girl.', 799, 'g5.jpg'],
+                ['classical-kurti', 'classical kurti', 'classical kurti for girl.', 2999, 'g6.jpg']
+            ],
+            babyb: [
+                ['baby-hoddie', 'Baby hoddie', 'Soft cotton hoddie for baby boys.', 599, 'b1.jpg'],
+                ['white-tshirt', 'White tshirt', 'white tshirt.', 1499, 'b2.jpg'],
+                ['red-tshirt', 'Red tshirt', 'Red tshirt for baby boys.', 1999, 'b3.jpg'],
+                ['blue-tshirt', 'blue tshirt', 'blue tshirt for baby boys.', 3499, 'b4.jpg'],
+                ['white-t-shirt', 'White T-Shirt', 'white tshirt for baby boys.', 799, 'b5.jpg'],
+                ['red-shirt', 'Red Shirt', 'red tshirt for baby boys.', 2999, 'b6.jpg']
+            ]
+        };
+        var PRODUCTS = {};
+        Object.keys(DATA).forEach(function (key) {
+            var meta = CAT[key];
+            DATA[key].forEach(function (row) {
+                var id = key + '-' + row[0];
+                PRODUCTS[id] = { id: id, name: row[1], desc: row[2], price: row[3], image: './img/' + row[4], category: meta.category, listPage: meta.listPage };
+            });
+        });
+
+        var pickedSize = '';
+
+        function getCart() {
+            return JSON.parse(localStorage.getItem('silverCart')) || [];
+        }
+
+        function saveCart(cart) {
+            localStorage.setItem('silverCart', JSON.stringify(cart));
+        }
+
+        function getSize() {
+            if (!pickedSize) {
+                alert('Please select a size');
+                return null;
+            }
+            return pickedSize;
+        }
+
+        function makeItem(product, size) {
+            return {
+                id: product.id,
+                name: product.name,
+                desc: product.desc,
+                price: product.price,
+                image: product.image,
+                size: size,
+                qty: 1
+            };
+        }
+
+        function findInCart(cart, id, size) {
+            return cart.find(function (item) {
+                return item.id === id && item.size === size;
+            });
+        }
+
+        function addProductToCart(product) {
+            var size = getSize();
+            if (!size) return;
+
+            var cart = getCart();
+            var found = findInCart(cart, product.id, size);
+            if (found) {
+                found.qty += 1;
+            } else {
+                cart.push(makeItem(product, size));
+            }
+            saveCart(cart);
+            alert(product.name + ' (' + size + ') added to cart!');
+        }
+
+        function buyProduct(product) {
+            var size = getSize();
+            if (!size) return;
+
+            localStorage.setItem('silverBuyNow', JSON.stringify([makeItem(product, size)]));
+            window.location.href = 'payment.html';
+        }
+
+        var params = new URLSearchParams(window.location.search);
+        var productId = params.get('id');
+        var product = productId ? PRODUCTS[productId] : null;
+
+        if (!product) {
+            document.getElementById('notFound').hidden = false;
+            document.title = 'Product Not Found - Silver Fashion';
+        } else {
+            document.title = product.name + ' - Silver Fashion';
+            document.getElementById('main').hidden = false;
+            document.getElementById('img').src = product.image;
+            document.getElementById('img').alt = product.name;
+            document.getElementById('cat').textContent = product.category;
+            document.getElementById('name').textContent = product.name;
+            document.getElementById('desc').textContent = product.desc;
+            document.getElementById('price').textContent = '\u20B9' + product.price;
+            document.getElementById('backLink').href = product.listPage;
+            document.getElementById('backLink').textContent = '\u2190 Back to ' + product.category;
+
+            document.querySelectorAll('.size').forEach(function (btn) {
+                btn.addEventListener('click', function () {
+                    document.querySelectorAll('.size').forEach(function (b) {
+                        b.classList.remove('on');
+                    });
+                    btn.classList.add('on');
+                    pickedSize = btn.getAttribute('data-size');
+                });
+            });
+
+            document.getElementById('cartBtn').addEventListener('click', function () {
+                addProductToCart(product);
+            });
+
+            document.getElementById('buyBtn').addEventListener('click', function () {
+                buyProduct(product);
+            });
+        }
+
+        $(document).ready(function () {
+            $('#header').load('header.html');
+            $('#footer').load('footer.html');
+        });
+    </script>
+
+</body>
+</html>

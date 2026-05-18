@@ -1,0 +1,162 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: #f5f5f5;
+}
+
+.page {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 90px 20px 50px;
+}
+
+.back {
+    display: inline-block;
+    color: #333;
+    text-decoration: none;
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+
+.back:hover {
+    color: #000;
+}
+
+.box {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    background: #fff;
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+}
+
+.pic img {
+    width: 100%;
+    height: 380px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.tag {
+    display: inline-block;
+    background: #111;
+    color: #fff;
+    font-size: 12px;
+    padding: 5px 12px;
+    border-radius: 16px;
+    margin-bottom: 12px;
+}
+
+.info h1 {
+    font-size: 28px;
+    margin-bottom: 10px;
+    text-transform: capitalize;
+}
+
+.desc {
+    font-size: 15px;
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 14px;
+}
+
+.price {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.sizes {
+    margin-bottom: 22px;
+}
+
+.sizes .label {
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.size {
+    min-width: 44px;
+    padding: 10px 14px;
+    border: 1px solid #ccc;
+    background: #fff;
+    border-radius: 6px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.size:hover {
+    border-color: #111;
+}
+
+.size.on {
+    background: #111;
+    color: #fff;
+    border-color: #111;
+}
+
+.btns {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.btn {
+    width: 100%;
+    padding: 13px;
+    border: none;
+    font-size: 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+}
+
+.btn.dark {
+    background: #111;
+    color: #fff;
+}
+
+.btn.dark:hover {
+    background: #333;
+}
+
+.btn.light {
+    background: #fff;
+    color: #111;
+    border: 2px solid #111;
+}
+
+.btn.light:hover {
+    background: #f0f0f0;
+}
+
+.empty {
+    text-align: center;
+    padding: 120px 20px 60px;
+}
+
+.empty h1 {
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.empty p {
+    color: #666;
+    margin-bottom: 20px;
+}
