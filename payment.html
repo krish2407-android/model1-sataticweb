@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Payment - Silver Fashion</title>
+    <title>Payment</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="payment.css">
+    <link rel="stylesheet" href="./css/payment.css">
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 </head>
@@ -25,10 +25,6 @@
                     <div class="input">
                         <label>Phone Number</label>
                         <input type="tel" placeholder="Enter mobile number" required>
-                    </div>
-                    <div class="input">
-                        <label>Email</label>
-                        <input type="email" placeholder="Enter your email" required>
                     </div>
                     <div class="input">
                         <label>Address</label>
@@ -218,8 +214,68 @@
 
         renderOrder();
 
+        function orderOwnerEmail() {
+            if (localStorage.getItem('silverLoggedIn') !== '1') {
+                return '';
+            }
+            try {
+                var u = JSON.parse(localStorage.getItem('silverUser') || '{}');
+                return (u.email || '').trim().toLowerCase();
+            } catch (err) {
+                return '';
+            }
+        }
+
+        function saveOrderToHistory(items, subtotal, delivery, total) {
+            var email = orderOwnerEmail();
+            var orders = [];
+            try {
+                orders = JSON.parse(localStorage.getItem('silverOrders') || '[]');
+            } catch (err) {
+                orders = [];
+            }
+            var orderId = 'SF' + Date.now().toString(36).toUpperCase();
+            var snapshot = items.map(function (it) {
+                return {
+                    id: it.id,
+                    name: it.name,
+                    price: it.price,
+                    qty: it.qty,
+                    size: it.size || '',
+                    image: it.image
+                };
+            });
+            var method =
+                (document.querySelector('input[name="pay"]:checked') || {})
+                    .value || 'cod';
+            orders.unshift({
+                id: orderId,
+                email: email,
+                date: new Date().toISOString(),
+                status: 'Processing',
+                subtotal: subtotal,
+                delivery: delivery,
+                total: total,
+                paymentMethod: method,
+                items: snapshot
+            });
+            localStorage.setItem('silverOrders', JSON.stringify(orders));
+        }
+
         document.getElementById('paymentForm').addEventListener('submit', function(e) {
             e.preventDefault();
+            var items = getCheckoutItems();
+            if (items.length === 0) {
+                window.location.href = 'cart.html';
+                return;
+            }
+            var subtotal = 0;
+            items.forEach(function (item) {
+                subtotal += item.price * item.qty;
+            });
+            var delivery = 99;
+            var total = subtotal + delivery;
+            saveOrderToHistory(items, subtotal, delivery, total);
             localStorage.removeItem('silverCart');
             localStorage.removeItem('silverBuyNow');
             successModal.show();
