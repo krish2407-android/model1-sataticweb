@@ -3,105 +3,227 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Product detail</title>
+
+    <title>Product Detail</title>
+
     <link rel="stylesheet" href="./css/productdetail.css">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="./js/products.js"></script>
+
 </head>
+
 <body>
 
     <div id="header"></div>
 
-    <section class="page" id="main" hidden>
-        <a href="#" class="back" id="backLink">← Back</a>
+    <section class="page" id="main">
+
+        <a href="category.html" class="back" id="backLink">← Back</a>
+
         <div class="box1">
+
             <div class="pic">
-                <img id="img" src="" alt="">
+                <img id="img" src="./img/men1.jpg" alt="">
             </div>
+
             <div class="info">
-                <span class="tag" id="cat"></span>
-                <h1 id="name"></h1>
-                <p class="desc" id="desc"></p>
-                <p class="price" id="price"></p>
 
-                <div class="sizes">
-                    <p class="label">Select Size</p>
-                    <div class="row" id="sizeRow">
-                        <button type="button" class="size" data-size="XS">XS</button>
-                        <button type="button" class="size" data-size="S">S</button>
-                        <button type="button" class="size" data-size="M">M</button>
-                        <button type="button" class="size" data-size="L">L</button>
-                        <button type="button" class="size" data-size="XL">XL</button>
-                        <button type="button" class="size" data-size="XXL">XXL</button>
+                <span class="tag" id="productTag">Men</span>
+
+                <h1 id="productName">Classic Cotton Tee</h1>
+
+                <p class="desc" id="productDesc">
+                    Stylish cotton T-shirt for men.
+                </p>
+
+                <p class="price" id="productPrice">₹999</p>
+
+            
+
+                <div class="mt-3">
+                    <span class="badge bg-dark">4.5 ★</span>
+                    <span>(120 Reviews)</span>
+                </div>
+
+                <ul class="nav nav-tabs mt-4">
+
+                    <li class="nav-item">
+                        <button class="nav-link active"
+                            data-bs-toggle="tab"
+                            data-bs-target="#details">
+                            Details
+                        </button>
+                    </li>
+
+                    <li class="nav-item">
+                        <button class="nav-link"
+                            data-bs-toggle="tab"
+                            data-bs-target="#features">
+                            Features
+                        </button>
+                    </li>
+
+                    <li class="nav-item">
+                        <button class="nav-link"
+                            data-bs-toggle="tab"
+                            data-bs-target="#reviews">
+                            Reviews
+                        </button>
+                    </li>
+
+                </ul>
+
+                <div class="tab-content border border-dark p-3">
+
+                    <div class="tab-pane fade show active" id="details">
+                        <p>
+                            Premium quality fashion product with modern design and comfortable fitting.
+                        </p>
                     </div>
+
+                    <div class="tab-pane fade" id="features">
+
+                        <ul>
+                            <li>100% Cotton</li>
+                            <li>Comfort Fit</li>
+                            <li>Premium Fabric</li>
+                            <li>Washable</li>
+                        </ul>
+
+                    </div>
+
+                    <div class="tab-pane fade" id="reviews">
+
+                        <div class="border-bottom mb-2 pb-2">
+                            <h6>Rahul ★★★★★</h6>
+                            <p>Very nice product quality.</p>
+                        </div>
+
+                        <div>
+                            <h6>Priya ★★★★☆</h6>
+                            <p>Comfortable and stylish.</p>
+                        </div>
+
+                    </div>
+
                 </div>
 
-                <div class="btns">
-                    <button type="button" class="btn dark" id="cartBtn">Add To Cart</button>
-                    <button type="button" class="btn light" id="buyBtn">Buy Now</button>
+                <!-- Pills -->
+
+                <ul class="nav nav-pills mt-4 mb-3">
+
+                    <li class="nav-item">
+                        <button class="nav-link active"
+                            data-bs-toggle="pill"
+                            data-bs-target="#offer">
+                            Offers
+                        </button>
+                    </li>
+
+                    <li class="nav-item ms-2">
+                        <button class="nav-link"
+                            data-bs-toggle="pill"
+                            data-bs-target="#delivery">
+                            Delivery
+                        </button>
+                    </li>
+
+                    <li class="nav-item ms-2">
+                        <button class="nav-link"
+                            data-bs-toggle="pill"
+                            data-bs-target="#return">
+                            Return
+                        </button>
+                    </li>
+
+                </ul>
+
+                <div class="tab-content border border-dark p-3">
+
+                    <div class="tab-pane fade show active" id="offer">
+                        <p>Get 10% OFF on first order.</p>
+                    </div>
+
+                    <div class="tab-pane fade" id="delivery">
+                        <p>Free delivery in 3-5 days.</p>
+                    </div>
+
+                    <div class="tab-pane fade" id="return">
+                        <p>Easy 7 days return available.</p>
+                    </div>
+
                 </div>
+
+
+                <div class="sizes mt-4">
+
+                    <p class="label">Select Size</p>
+
+                    <div class="size-row">
+
+                        <button type="button" class="size">XS</button>
+
+                        <button type="button" class="size">S</button>
+
+                        <button type="button" class="size">M</button>
+
+                        <button type="button" class="size">L</button>
+
+                        <button type="button" class="size">XL</button>
+
+                        <button type="button" class="size">XXL</button>
+
+                    </div>
+
+                </div>
+
+                <div class="d-flex flex-wrap gap-3 mt-4">
+
+                    <button type="button" class="btn btn-dark" id="addToCartBtn">
+                        Add To Cart
+                    </button>
+
+                    <button type="button" class="btn btn-outline-dark" id="buyNowBtn">
+                        Buy Now
+                    </button>
+
+                </div>
+
             </div>
-        </div>
-    </section>
 
-    <section class="empty" id="notFound" hidden>
-        <h1>Product not found</h1>
-        <p>Sorry, we could not find this product.</p>
-        <a href="index.html" class="btn dark">Go to Home</a>
+        </div>
+
     </section>
 
     <div id="footer"></div>
 
     <script>
-        var CAT = {
-            men: { category: 'Men', listPage: 'productmen.html' },
-            women: { category: 'Women', listPage: 'productwomen.html' },
-            babyg: { category: 'Baby Girl', listPage: 'productbabyg.html' },
-            babyb: { category: 'Baby Boy', listPage: 'productbabyb.html' }
-        };
-        var DATA = {
-            men: [
-                ['white-t-shirt', 'Classic Cotton Tee', 'Stylish cotton T-shirt for men.', 999, 'men1.jpg'],
-                ['blue-shirt', 'Formal Cotton Shirt', 'Stylish shirt for everyday wear.', 1499, 'm2.jpg'],
-                ['printing-shirt', 'Graphic Print Shirt', 'Bold graphic print shirt for men.', 1999, 'm3.jpg'],
-                ['lining-shirt', 'Premium Lining Shirt', 'Premium lined shirt for a sharp look.', 3499, 'm6.jpg'],
-                ['kurta', 'Kurta', 'Classic casual kurta', 799, 'm5.jpg'],
-                ['shirt', 'shirt', 'Us polo shirt', 2999, 'm4.jpg']
-            ],
-            women: [
-                ['silk-saree', 'Silk Saree', 'Beautiful sari for women.', 2499, 'w1.jpg'],
-                ['shirt', 'Summer Casual Shirt', 'Light and trendy summer shirt.', 899, 'w2.jpg'],
-                ['casual-kurti', 'Casual Kurti', 'Comfortable daily wear kurti.', 1299, 'w3.jpg'],
-                ['blue-jeans', 'Slim Fit Jeans', 'Comfortable slim fit jeans for women.', 3199, 'w4.jpg'],
-                ['party-dresses', 'party Dresses', 'party wear for women.', 1799, 'w5.jpg'],
-                ['floral-skirt', 'Floral Skirt', 'Elegant floral print skirt.', 1099, 'w6.jpg']
-            ],
-            babyg: [
-                ['skirt-1', 'Floral Frock', 'Cute frock for baby girls.', 699, 'g1.jpg'],
-                ['skirt-2', 'Party Skirt', 'Comfortable party skirt for little ones.', 1499, 'g2.jpg'],
-                ['pink-fork', 'Cute Party Frock', 'Party frock for baby girls.', 1999, 'g3.jpg'],
-                ['pink-skirt', 'Ruffle Skirt', 'Ruffle skirt for baby girls.', 3499, 'g4.jpg'],
-                ['t-shirt', 'T-Shirt', 'T-shirt for child girl.', 799, 'g5.jpg'],
-                ['classical-kurti', 'classical kurti', 'classical kurti for girl.', 2999, 'g6.jpg']
-            ],
-            babyb: [
-                ['baby-hoddie', 'Cozy Hoodie', 'Soft cotton hoodie for baby boys.', 599, 'b1.jpg'],
-                ['white-tshirt', 'Everyday Cotton Tee', 'Soft cotton tee for baby boys.', 1499, 'b2.jpg'],
-                ['red-tshirt', 'Sports Graphic Tee', 'Sporty graphic tee for baby boys.', 1999, 'b3.jpg'],
-                ['blue-tshirt', 'Polo Style Tee', 'Smart polo style tee for baby boys.', 3499, 'b4.jpg'],
-                ['white-t-shirt', 'White T-Shirt', 'white tshirt for baby boys.', 799, 'b5.jpg'],
-                ['red-shirt', 'Red Shirt', 'red tshirt for baby boys.', 2999, 'b6.jpg']
-            ]
-        };
-        var PRODUCTS = {};
-        Object.keys(DATA).forEach(function (key) {
-            var meta = CAT[key];
-            DATA[key].forEach(function (row) {
-                var id = key + '-' + row[0];
-                PRODUCTS[id] = { id: id, name: row[1], desc: row[2], price: row[3], image: './img/' + row[4], category: meta.category, listPage: meta.listPage };
-            });
-        });
+        var currentProduct = null;
 
-        var pickedSize = '';
+        function getQueryId() {
+            var params = new URLSearchParams(window.location.search);
+            return params.get('id');
+        }
+
+        function renderProduct(product) {
+            currentProduct = product;
+            document.title = product.name + ' — Product Detail';
+            document.getElementById('img').src = product.image;
+            document.getElementById('img').alt = product.name;
+            document.getElementById('productTag').textContent = product.categoryLabel;
+            document.getElementById('productName').textContent = product.name;
+            document.getElementById('productDesc').textContent = product.desc;
+            document.getElementById('productPrice').textContent = '₹' + product.price;
+        }
+
+        function showNotFound() {
+            document.getElementById('main').innerHTML =
+                '<a href="category.html" class="back">← Back to category</a>' +
+                '<p class="mt-4">Product not found. <a href="category.html">Browse all products</a>.</p>';
+        }
 
         function getCart() {
             return JSON.parse(localStorage.getItem('silverCart')) || [];
@@ -111,90 +233,55 @@
             localStorage.setItem('silverCart', JSON.stringify(cart));
         }
 
-        function getSize() {
-            if (!pickedSize) {
-                alert('Please select a size');
-                return null;
-            }
-            return pickedSize;
-        }
-
-        function makeItem(product, size) {
-            return {
-                id: product.id,
-                name: product.name,
-                desc: product.desc,
-                price: product.price,
-                image: product.image,
-                size: size,
-                qty: 1
-            };
-        }
-
-        function findInCart(cart, id, size) {
-            return cart.find(function (item) {
-                return item.id === id && item.size === size;
-            });
-        }
-
-        function addProductToCart(product) {
-            var size = getSize();
-            if (!size) return;
-
+        function addCurrentToCart() {
+            if (!currentProduct) return;
             var cart = getCart();
-            var found = findInCart(cart, product.id, size);
+            var found = cart.find(function (item) {
+                return item.id === currentProduct.id;
+            });
             if (found) {
                 found.qty += 1;
             } else {
-                cart.push(makeItem(product, size));
+                cart.push({
+                    id: currentProduct.id,
+                    name: currentProduct.name,
+                    desc: currentProduct.desc,
+                    price: currentProduct.price,
+                    image: currentProduct.image,
+                    qty: 1
+                });
             }
             saveCart(cart);
-            alert(product.name + ' (' + size + ') added to cart!');
+            alert(currentProduct.name + ' added to cart!');
         }
 
-        function buyProduct(product) {
-            var size = getSize();
-            if (!size) return;
-
-            localStorage.setItem('silverBuyNow', JSON.stringify([makeItem(product, size)]));
-            window.location.href = 'payment.html';
-        }
-
-        var params = new URLSearchParams(window.location.search);
-        var productId = params.get('id');
-        var product = productId ? PRODUCTS[productId] : null;
-
-        if (!product) {
-            document.getElementById('notFound').hidden = false;
-            document.title = 'Product Not Found - Silver Fashion';
-        } else {
-            document.title = product.name + ' - Silver Fashion';
-            document.getElementById('main').hidden = false;
-            document.getElementById('img').src = product.image;
-            document.getElementById('img').alt = product.name;
-            document.getElementById('cat').textContent = product.category;
-            document.getElementById('name').textContent = product.name;
-            document.getElementById('desc').textContent = product.desc;
-            document.getElementById('price').textContent = '\u20B9' + product.price;
-            document.getElementById('backLink').href = product.listPage;
-            document.getElementById('backLink').textContent = '\u2190 Back to ' + product.category;
-
-            document.querySelectorAll('.size').forEach(function (btn) {
-                btn.addEventListener('click', function () {
-                    document.querySelectorAll('.size').forEach(function (b) {
-                        b.classList.remove('on');
-                    });
-                    btn.classList.add('on');
-                    pickedSize = btn.getAttribute('data-size');
+        document.querySelectorAll('.size').forEach(function (btn) {
+            btn.addEventListener('click', function () {
+                document.querySelectorAll('.size').forEach(function (b) {
+                    b.classList.remove('on');
                 });
+                btn.classList.add('on');
             });
+        });
 
-            document.getElementById('cartBtn').addEventListener('click', function () {
-                addProductToCart(product);
-            });
+        var productId = getQueryId();
+        var product = getProductById(productId);
+        if (product) {
+            renderProduct(product);
+        } else {
+            showNotFound();
+        }
 
-            document.getElementById('buyBtn').addEventListener('click', function () {
-                buyProduct(product);
+        var addBtn = document.getElementById('addToCartBtn');
+        if (addBtn) {
+            addBtn.addEventListener('click', addCurrentToCart);
+        }
+
+        var buyBtn = document.getElementById('buyNowBtn');
+        if (buyBtn) {
+            buyBtn.addEventListener('click', function () {
+                addCurrentToCart();
+                window.location.href = 'cart.html';
             });
         }
 
@@ -203,6 +290,8 @@
             $('#footer').load('footer.html');
         });
     </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
 </html>

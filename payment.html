@@ -136,6 +136,16 @@
         var successModal = new bootstrap.Modal(document.getElementById('successModal'));
 
         function showPayFields() {
+//             $(document).ready(function(){
+//             $(".payoptions").after("<p id='offerText'>Secure payment available on Silver Fashion</p>");
+//             $("#upiId").attr("placeholder","example@upi");
+//             $("input[value='cod']").closest(".payopt").remove();
+// // $(".payoptions").append("<label class='payopt'><input type='radio' name='pay' value='netbanking'><span>Net Banking</span></label>");
+//             payOptions=document.querySelectorAll("input[name='pay']");
+//             payOptions.forEach(function(option){
+//             option.addEventListener("change",showPayFields);
+//             });
+//                 });
             var method = document.querySelector('input[name="pay"]:checked').value;
 
             if (method === 'upi') {
