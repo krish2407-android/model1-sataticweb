@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Category - Silver Fashion</title>
+    <title>Category</title>
     <link rel="stylesheet" href="./css/category.css">
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 </head>
@@ -13,8 +13,7 @@
 
 <section class="section">
     <div class="page-intro">
-        <h1>Shop by category</h1>
-        <p class="intro-text">Men, women, and kids — filter by collection and price in one place.</p>
+        <h1>Silver Category</h1>
     </div>
 
     <div class="category-layout">
@@ -53,146 +52,228 @@
         </aside>
 
         <div class="products-area">
-            <div class="products-toolbar">
+            <!-- <div class="products-toolbar">
                 <p class="result-count" id="resultCount"></p>
-            </div>
+            </div> -->
 
-            <div class="container" id="productGrid">
+            <div id="productGrid">
 
-                <div class="product-card" data-category="men" data-product-id="men-white-t-shirt" data-price="999">
-                    <img src="./img/men1.jpg" alt="White T-Shirt">
-                    <div class="product-info">
-                        <h2>White T-Shirt</h2>
-                        <p>Stylish cotton T-shirt for men.</p>
-                        <h3 class="price-tag">₹999</h3>
-                        <div class="btn-row">
-                            <button type="button" class="btn btn-cart">Add to cart</button>
-                            <button type="button" class="btn btn-buy">Buy now</button>
+                <section class="category-group" data-category="men">
+                    <h2 class="category-heading">Men <a href="productmen.html" class="view-all-link">View all</a></h2>
+                    <div class="category-products">
+                        <div class="product-card" data-category="men" data-product-id="men-white-t-shirt" data-price="999">
+                            <img src="./img/men1.jpg" alt="Classic Cotton Tee">
+                            <div class="product-info">
+                                <h2>Classic Cotton Tee</h2>
+                                <p>Stylish cotton T-shirt for men.</p>
+                                <h3 class="price-tag">₹999</h3>
+                                <div class="btn-row">
+                                    <button type="button" class="btn btn-cart">Add to cart</button>
+                                    <button type="button" class="btn btn-buy">Buy now</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product-card" data-category="men" data-product-id="men-blue-shirt" data-price="1499">
+                            <img src="./img/m2.jpg" alt="Formal Cotton Shirt">
+                            <div class="product-info">
+                                <h2>Formal Cotton Shirt</h2>
+                                <p>Stylish shirt for everyday wear.</p>
+                                <h3 class="price-tag">₹1499</h3>
+                                <div class="btn-row">
+                                    <button type="button" class="btn btn-cart">Add to cart</button>
+                                    <button type="button" class="btn btn-buy">Buy now</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product-card" data-category="men" data-product-id="men-printing-shirt" data-price="1999">
+                            <img src="./img/m3.jpg" alt="Graphic Print Shirt">
+                            <div class="product-info">
+                                <h2>Graphic Print Shirt</h2>
+                                <p>Bold graphic print shirt for men.</p>
+                                <h3 class="price-tag">₹1999</h3>
+                                <div class="btn-row">
+                                    <button type="button" class="btn btn-cart">Add to cart</button>
+                                    <button type="button" class="btn btn-buy">Buy now</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product-card" data-category="men" data-product-id="men-lining-shirt" data-price="3499">
+                            <img src="./img/m6.jpg" alt="Premium Lining Shirt">
+                            <div class="product-info">
+                                <h2>Premium Lining Shirt</h2>
+                                <p>Premium lined shirt for a sharp look.</p>
+                                <h3 class="price-tag">₹3499</h3>
+                                <div class="btn-row">
+                                    <button type="button" class="btn btn-cart">Add to cart</button>
+                                    <button type="button" class="btn btn-buy">Buy now</button>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
+                </section>
 
-                <div class="product-card" data-category="men" data-product-id="men-blue-shirt" data-price="1499">
-                    <img src="./img/m2.jpg" alt="Blue shirt">
-                    <div class="product-info">
-                        <h2>Blue Shirt</h2>
-                        <p>Stylish shirts for everyday wear.</p>
-                        <h3 class="price-tag">₹1499</h3>
-                        <div class="btn-row">
-                            <button type="button" class="btn btn-cart">Add to cart</button>
-                            <button type="button" class="btn btn-buy">Buy now</button>
+                <section class="category-group" data-category="women">
+                    <h2 class="category-heading">Women <a href="productwomen.html" class="view-all-link">View all</a></h2>
+                    <div class="category-products">
+                        <div class="product-card" data-category="women" data-product-id="women-silk-saree" data-price="2499">
+                            <img src="./img/w1.jpg" alt="Silk Saree">
+                            <div class="product-info">
+                                <h2>Silk Saree</h2>
+                                <p>Beautiful sari for women.</p>
+                                <h3 class="price-tag">₹2499</h3>
+                                <div class="btn-row">
+                                    <button type="button" class="btn btn-cart">Add to cart</button>
+                                    <button type="button" class="btn btn-buy">Buy now</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product-card" data-category="women" data-product-id="women-shirt" data-price="899">
+                            <img src="./img/w2.jpg" alt="Summer Casual Shirt">
+                            <div class="product-info">
+                                <h2>Summer Casual Shirt</h2>
+                                <p>Light and trendy summer shirt.</p>
+                                <h3 class="price-tag">₹899</h3>
+                                <div class="btn-row">
+                                    <button type="button" class="btn btn-cart">Add to cart</button>
+                                    <button type="button" class="btn btn-buy">Buy now</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product-card" data-category="women" data-product-id="women-casual-kurti" data-price="1299">
+                            <img src="./img/w3.jpg" alt="Casual Kurti">
+                            <div class="product-info">
+                                <h2>Casual Kurti</h2>
+                                <p>Comfortable daily wear kurti.</p>
+                                <h3 class="price-tag">₹1299</h3>
+                                <div class="btn-row">
+                                    <button type="button" class="btn btn-cart">Add to cart</button>
+                                    <button type="button" class="btn btn-buy">Buy now</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product-card" data-category="women" data-product-id="women-blue-jeans" data-price="3199">
+                            <img src="./img/w4.jpg" alt="Slim Fit Jeans">
+                            <div class="product-info">
+                                <h2>Slim Fit Jeans</h2>
+                                <p>Comfortable slim fit jeans for women.</p>
+                                <h3 class="price-tag">₹3199</h3>
+                                <div class="btn-row">
+                                    <button type="button" class="btn btn-cart">Add to cart</button>
+                                    <button type="button" class="btn btn-buy">Buy now</button>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
+                </section>
 
-                <div class="product-card" data-category="men" data-product-id="men-printing-shirt" data-price="1999">
-                    <img src="./img/m3.jpg" alt="Printing shirt">
-                    <div class="product-info">
-                        <h2>Printing Shirt</h2>
-                        <p>Bold prints for men.</p>
-                        <h3 class="price-tag">₹1999</h3>
-                        <div class="btn-row">
-                            <button type="button" class="btn btn-cart">Add to cart</button>
-                            <button type="button" class="btn btn-buy">Buy now</button>
+                <section class="category-group" data-category="girl">
+                    <h2 class="category-heading">Baby Girl <a href="productbabyg.html" class="view-all-link">View all</a></h2>
+                    <div class="category-products">
+                        <div class="product-card" data-category="girl" data-product-id="babyg-skirt-1" data-price="699">
+                            <img src="./img/g1.jpg" alt="Floral Frock">
+                            <div class="product-info">
+                                <h2>Floral Frock</h2>
+                                <p>Cute frock for baby girls.</p>
+                                <h3 class="price-tag">₹699</h3>
+                                <div class="btn-row">
+                                    <button type="button" class="btn btn-cart">Add to cart</button>
+                                    <button type="button" class="btn btn-buy">Buy now</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product-card" data-category="girl" data-product-id="babyg-skirt-2" data-price="1499">
+                            <img src="./img/g2.jpg" alt="Party Skirt">
+                            <div class="product-info">
+                                <h2>Party Skirt</h2>
+                                <p>Comfortable party skirt for little ones.</p>
+                                <h3 class="price-tag">₹1499</h3>
+                                <div class="btn-row">
+                                    <button type="button" class="btn btn-cart">Add to cart</button>
+                                    <button type="button" class="btn btn-buy">Buy now</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product-card" data-category="girl" data-product-id="babyg-pink-fork" data-price="1999">
+                            <img src="./img/g3.jpg" alt="Cute Party Frock">
+                            <div class="product-info">
+                                <h2>Cute Party Frock</h2>
+                                <p>Party frock for baby girls.</p>
+                                <h3 class="price-tag">₹1999</h3>
+                                <div class="btn-row">
+                                    <button type="button" class="btn btn-cart">Add to cart</button>
+                                    <button type="button" class="btn btn-buy">Buy now</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product-card" data-category="girl" data-product-id="babyg-pink-skirt" data-price="3499">
+                            <img src="./img/g4.jpg" alt="Ruffle Skirt">
+                            <div class="product-info">
+                                <h2>Ruffle Skirt</h2>
+                                <p>Ruffle skirt for baby girls.</p>
+                                <h3 class="price-tag">₹3499</h3>
+                                <div class="btn-row">
+                                    <button type="button" class="btn btn-cart">Add to cart</button>
+                                    <button type="button" class="btn btn-buy">Buy now</button>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
+                </section>
 
-                <div class="product-card" data-category="women" data-product-id="women-silk-saree" data-price="2499">
-                    <img src="./img/w1.jpg" alt="Silk saree">
-                    <div class="product-info">
-                        <h2>Silk Saree</h2>
-                        <p>Beautiful drape for special occasions.</p>
-                        <h3 class="price-tag">₹2499</h3>
-                        <div class="btn-row">
-                            <button type="button" class="btn btn-cart">Add to cart</button>
-                            <button type="button" class="btn btn-buy">Buy now</button>
+                <section class="category-group" data-category="boy">
+                    <h2 class="category-heading">Baby Boy <a href="productbabyb.html" class="view-all-link">View all</a></h2>
+                    <div class="category-products">
+                        <div class="product-card" data-category="boy" data-product-id="babyb-baby-hoddie" data-price="599">
+                            <img src="./img/b1.jpg" alt="Cozy Hoodie">
+                            <div class="product-info">
+                                <h2>Cozy Hoodie</h2>
+                                <p>Soft cotton hoodie for baby boys.</p>
+                                <h3 class="price-tag">₹599</h3>
+                                <div class="btn-row">
+                                    <button type="button" class="btn btn-cart">Add to cart</button>
+                                    <button type="button" class="btn btn-buy">Buy now</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product-card" data-category="boy" data-product-id="babyb-white-tshirt" data-price="1499">
+                            <img src="./img/b2.jpg" alt="Everyday Cotton Tee">
+                            <div class="product-info">
+                                <h2>Everyday Cotton Tee</h2>
+                                <p>Soft cotton tee for baby boys.</p>
+                                <h3 class="price-tag">₹1499</h3>
+                                <div class="btn-row">
+                                    <button type="button" class="btn btn-cart">Add to cart</button>
+                                    <button type="button" class="btn btn-buy">Buy now</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product-card" data-category="boy" data-product-id="babyb-red-tshirt" data-price="1999">
+                            <img src="./img/b3.jpg" alt="Sports Graphic Tee">
+                            <div class="product-info">
+                                <h2>Sports Graphic Tee</h2>
+                                <p>Sporty graphic tee for baby boys.</p>
+                                <h3 class="price-tag">₹1999</h3>
+                                <div class="btn-row">
+                                    <button type="button" class="btn btn-cart">Add to cart</button>
+                                    <button type="button" class="btn btn-buy">Buy now</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product-card" data-category="boy" data-product-id="babyb-blue-tshirt" data-price="3499">
+                            <img src="./img/b4.jpg" alt="Polo Style Tee">
+                            <div class="product-info">
+                                <h2>Polo Style Tee</h2>
+                                <p>Smart polo style tee for baby boys.</p>
+                                <h3 class="price-tag">₹3499</h3>
+                                <div class="btn-row">
+                                    <button type="button" class="btn btn-cart">Add to cart</button>
+                                    <button type="button" class="btn btn-buy">Buy now</button>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
-
-                <div class="product-card" data-category="women" data-product-id="women-shirt" data-price="899">
-                    <img src="./img/w2.jpg" alt="Women shirt">
-                    <div class="product-info">
-                        <h2>Shirt</h2>
-                        <p>Light and trendy summer shirt.</p>
-                        <h3 class="price-tag">₹899</h3>
-                        <div class="btn-row">
-                            <button type="button" class="btn btn-cart">Add to cart</button>
-                            <button type="button" class="btn btn-buy">Buy now</button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="product-card" data-category="women" data-product-id="women-casual-kurti" data-price="1299">
-                    <img src="./img/w3.jpg" alt="Casual kurti">
-                    <div class="product-info">
-                        <h2>Casual Kurti</h2>
-                        <p>Comfortable daily wear kurti.</p>
-                        <h3 class="price-tag">₹1299</h3>
-                        <div class="btn-row">
-                            <button type="button" class="btn btn-cart">Add to cart</button>
-                            <button type="button" class="btn btn-buy">Buy now</button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="product-card" data-category="girl" data-product-id="babyg-skirt-1" data-price="699">
-                    <img src="./img/g1.jpg" alt="Baby girl skirt">
-                    <div class="product-info">
-                        <h2>Skirt</h2>
-                        <p>Cute frock for baby girls.</p>
-                        <h3 class="price-tag">₹699</h3>
-                        <div class="btn-row">
-                            <button type="button" class="btn btn-cart">Add to cart</button>
-                            <button type="button" class="btn btn-buy">Buy now</button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="product-card" data-category="girl" data-product-id="babyg-skirt-2" data-price="1499">
-                    <img src="./img/g2.jpg" alt="Baby girl skirt">
-                    <div class="product-info">
-                        <h2>Skirt</h2>
-                        <p>Comfortable skirt for little ones.</p>
-                        <h3 class="price-tag">₹1499</h3>
-                        <div class="btn-row">
-                            <button type="button" class="btn btn-cart">Add to cart</button>
-                            <button type="button" class="btn btn-buy">Buy now</button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="product-card" data-category="boy" data-product-id="babyb-baby-hoddie" data-price="599">
-                    <img src="./img/b1.jpg" alt="Baby hoodie">
-                    <div class="product-info">
-                        <h2>Baby Hoodie</h2>
-                        <p>Soft cotton hoodie for baby boys.</p>
-                        <h3 class="price-tag">₹599</h3>
-                        <div class="btn-row">
-                            <button type="button" class="btn btn-cart">Add to cart</button>
-                            <button type="button" class="btn btn-buy">Buy now</button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="product-card" data-category="boy" data-product-id="babyb-white-tshirt" data-price="1499">
-                    <img src="./img/b2.jpg" alt="White t-shirt">
-                    <div class="product-info">
-                        <h2>White T-shirt</h2>
-                        <p>Easy everyday tee for boys.</p>
-                        <h3 class="price-tag">₹1499</h3>
-                        <div class="btn-row">
-                            <button type="button" class="btn btn-cart">Add to cart</button>
-                            <button type="button" class="btn btn-buy">Buy now</button>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-
-            <p class="empty-msg" id="noProductsMsg" hidden>No products match your filters. Try widening the price range or another category.</p>
-        </div>
+                   <i class="fa-solid fa-angle-up" id="scrollTopBtn"></i>
+                </section>
 
     </div>
 </section>
@@ -203,6 +284,10 @@
     (function () {
         function getCards() {
             return document.querySelectorAll('#productGrid .product-card');
+        }
+
+        function getGroups() {
+            return document.querySelectorAll('#productGrid .category-group');
         }
 
         function getPriceFromCard(card) {
@@ -259,6 +344,18 @@
                 card.style.display = ok ? '' : 'none';
                 if (ok) visible += 1;
             });
+            getGroups().forEach(function (group) {
+                var groupCat = group.getAttribute('data-category');
+                if (cat !== 'all' && groupCat !== cat) {
+                    group.style.display = 'none';
+                    return;
+                }
+                var shown = 0;
+                group.querySelectorAll('.product-card').forEach(function (card) {
+                    if (card.style.display !== 'none') shown += 1;
+                });
+                group.style.display = shown > 0 ? '' : 'none';
+            });
             var countEl = document.getElementById('resultCount');
             if (countEl) {
                 countEl.textContent = visible + ' product' + (visible === 1 ? '' : 's') + ' shown';
@@ -279,7 +376,7 @@
             var hi = Math.max.apply(null, prices);
             var hint = document.getElementById('catalogPriceHint');
             if (hint) {
-                hint.textContent = 'On this page: ₹' + lo + ' – ₹' + hi + '.';
+                hint.textContent = 'On this page: ₹' + lo + ' – ₹' + hi + ' (16 products).';
             }
         }
 
@@ -403,6 +500,27 @@
             window.location.href = 'productdetail.html?id=' + encodeURIComponent(card.getAttribute('data-product-id'));
         });
     });
+
+const scrollTopBtn = document.getElementById("scrollTopBtn");
+
+window.addEventListener("scroll", function () {
+
+    if (window.scrollY > 300) {
+        scrollTopBtn.style.display = "block";
+    } else {
+        scrollTopBtn.style.display = "none";
+    }
+
+});
+
+scrollTopBtn.addEventListener("click", function () {
+
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+
+});
 
     $(document).ready(function () {
         $('#header').load('header.html');
